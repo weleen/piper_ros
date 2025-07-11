@@ -33,4 +33,4 @@ COPY . .
 # RUN bash can_activate.sh can0 1000000
 # RUN colcon build
 
-CMD ["bash -c 'can_activate.sh can0 1000000 && source /opt/ros/humble/setup.bash && rm -rf build && colcon build'"]
+CMD ["bash -c 'can_activate.sh can0 1000000 && source /opt/ros/humble/setup.bash && rm -rf build install devel && colcon build && source install/setup.bash'"]
