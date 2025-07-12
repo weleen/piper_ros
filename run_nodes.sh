@@ -16,9 +16,11 @@ echo "正在启动ROS节点..."
 ros2 run piper piper_single_ctrl --ros-args -p can_port:=can0 -p auto_enable:=true -p gripper_exist:=true -p gripper_val_mutiple:=2 > piper_ros_humble_piper.log 2>&1 &
 echo "piper节点已启动"
 
-# step 2, 
+# step 2, rosbridge
+nohup ros2 launch rosbridge_server rosbridge_websocket_launch.xml > piper_ros_humble_rosbridge.log 2>&1 &
+
 # step 3, moveit
-nohup roslaunch piper_with_gripper_moveit demo.launch > piper_ros_noetic_moveit.log 2>&1 &
+nohup ros2 launch piper_with_gripper_moveit demo.launch.py > piper_ros_humble_moveit.log 2>&1 &
 echo "moveit已启动"
 
 echo "所有节点已启动，进入交互模式"

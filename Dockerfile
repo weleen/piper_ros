@@ -28,7 +28,7 @@ RUN echo "export LC_NUMERIC=en_US.UTF-8" >> ~/.bashrc
 # RUN source ~/.bashrc
 
 # Activate CAN device
-# WORKDIR /root/piper_ros
+WORKDIR /root/
 # COPY . .
 # # For single CAN device
 # RUN bash can_activate.sh can0 1000000

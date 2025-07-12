@@ -11,4 +11,4 @@ docker run -it \
            -v /dev/dri:/dev/dri \
            --name ros2_container \
            piper-ros-humble \
-           /bin/bash
+           bash
