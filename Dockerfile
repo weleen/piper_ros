@@ -20,15 +20,16 @@ RUN apt-get install -y ros-humble-control* \
                        ros-humble-moveit* \
                        ros-humble-moveit-configs* \
                        ros-humble-moveit-planners* \
-                       ros-humble-moveit-plugins* \
+                       ros-humble-moveit-plugins*
+RUN apt-get update && apt-get install -y ros-humble-rosbridge-server \
                        && rm -rf /var/lib/apt/lists/*
 ## set locale
 RUN echo "export LC_NUMERIC=en_US.UTF-8" >> ~/.bashrc
 # RUN source ~/.bashrc
 
 # Activate CAN device
-WORKDIR /root/piper_ros
-COPY . .
+# WORKDIR /root/piper_ros
+# COPY . .
 # # For single CAN device
 # RUN bash can_activate.sh can0 1000000
 # RUN colcon build

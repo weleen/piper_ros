@@ -7,8 +7,8 @@ docker run -it \
            -e QT_X11_NO_MITSHM=1 \
            -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
            -v "$HOME/.Xauthority":/root/.Xauthority:rw \
-           -v /home/vcg:/home/vcg \
+           -v /home/vcg/Documents/code/github/:/root/github/ \
            -v /dev/dri:/dev/dri \
            --name ros2_container \
-           ros-piper \
+           piper-ros-humble \
            /bin/bash
