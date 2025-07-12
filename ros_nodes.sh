@@ -20,6 +20,9 @@ echo "roscore 已启动"
 nohup roslaunch piper start_single_piper.launch can_port:=can0 auto_enable:=true gripper_val_mutiple:=2 > piper_ros_noetic_piper.log 2>&1 &
 echo "piper节点已启动"
 
+# step 2, rosbridge
+nohup roslaunch rosbridge_server rosbridge_websocket.launch > piper_ros_noetic_rosbridge.log 2>&1 &
+
 # step 3, moveit
 nohup roslaunch piper_with_gripper_moveit demo.launch > piper_ros_noetic_moveit.log 2>&1 &
 echo "moveit已启动"

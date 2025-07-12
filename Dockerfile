@@ -11,9 +11,11 @@ RUN apt-get install -y \
         python3-wstool python3-catkin-tools python3-rosdep ros-noetic-ruckig \
         ros-noetic-eigen-stl-containers ros-noetic-geometric-shapes ros-noetic-pybind11-catkin \
         ros-noetic-moveit-resources-panda-moveit-config ros-noetic-ompl ros-noetic-warehouse-ros ros-noetic-eigenpy ros-noetic-rosparam-shortcuts \
-        ros-noetic-moveit-msgs ros-noetic-srdfdom
+        ros-noetic-moveit-msgs ros-noetic-srdfdom \
+        ros-noetic-rosbridge-server
 ## install Moveit
-RUN apt install -y ros-noetic-moveit
+RUN apt install -y ros-noetic-moveit \
+        && rm -rf /var/lib/apt/lists/*
 
 # ## set locale
 # RUN echo "export LC_NUMERIC=en_US.UTF-8" >> ~/.bashrc
